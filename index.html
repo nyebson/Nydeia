@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NydeIA | Transforme seu Conteúdo Visual</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #0a0a0a;
+            color: #f8f8f8;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        
+        .cta-button {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            transition: all 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.5);
+        }
+        
+        .feature-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border: 1px solid rgba(139, 92, 246, 0.5);
+            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.2);
+        }
+        
+        .before-after {
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+        }
+        
+        .before-after::before {
+            content: "ANTES";
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .before-after::after {
+            content: "DEPOIS";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: rgba(59, 130, 246, 0.9);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 10;
+        }
+        
+        .benefit-item {
+            transition: all 0.3s ease;
+        }
+        
+        .benefit-item:hover {
+            transform: translateX(5px);
+        }
+        
+        .form-input {
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .form-input:focus {
+            border-color: #8b5cf6;
+            background-color: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.2);
+        }
+        
+        /* Estilos para as imagens personalizadas */
+        .image-container {
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .image-container:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Novo estilo para a imagem do especialista (retangular com borda) */
+        .profile-image-full {
+            border: 4px solid #6366f1;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.4);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .profile-image-full:hover {
+            transform: scale(1.02);
+        }
+        
+        .service-detail {
+            border-left: 3px solid #6366f1;
+            padding-left: 15px;
+            margin: 15px 0;
+        }
+        
+        .whatsapp-button {
+            background-color: #25D366;
+            transition: all 0.3s ease;
+        }
+        
+        .whatsapp-button:hover {
+            background-color: #128C7E;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-black bg-opacity-80 backdrop-blur-md border-b border-gray-800">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center">
+                <span class="text-2xl font-bold gradient-text">NydeIA</span>
+            </div>
+            <div class="hidden md:flex space-x-8">
+                <a href="#solucoes" class="text-gray-300 hover:text-white transition">Soluções</a>
+                <a href="#beneficios" class="text-gray-300 hover:text-white transition">Benefícios</a>
+                <a href="#sobre" class="text-gray-300 hover:text-white transition">Sobre</a>
+                <a href="#contato" class="text-gray-300 hover:text-white transition">Contato</a>
+            </div>
+            <div>
+                <a href="https://wa.me/5585987133017?text=Olá,%20gostaria%20de%20mais%20informações." target="_blank" class="hidden md:inline-block px-6 py-2 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium transition">Solicitar Orçamento</a>
+                <button class="md:hidden text-white">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 px-4 bg-gradient-to-b from-black to-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Transforme a Imagem do Seu Negócio com o Poder da 
+                        <span class="gradient-text">Inteligência Artificial</span>
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">Sua marca é única. Suas imagens e vídeos também deveriam ser.</p>
+                    <a href="https://wa.me/5585987133017?text=Olá,%20gostaria%20de%20mais%20informações." target="_blank" class="cta-button inline-block px-8 py-4 text-lg font-bold text-white rounded-full shadow-lg">
+                        QUERO TRANSFORMAR MEU CONTEÚDO VISUAL AGORA!
+                    </a>
+                </div>
+                <div class="md:w-1/2">
+                    <!-- ANTES E DEPOIS - Substitua com suas próprias imagens -->
+                    <div class="before-after relative rounded-xl overflow-hidden shadow-2xl">
+                        <div class="flex">
+                            <!-- IMAGEM "ANTES" - Substitua o src pela URL da sua primeira imagem -->
+                            <div class="w-1/2 h-96 image-container">
+                                <!-- SUBSTITUA O SRC PELA URL DA SUA IMAGEM "ANTES" -->
+                                <img src="https://i.ibb.co/SwMTfSTp/1e94fa0c-35c1-4b71-8687-704354172981.jpg" alt="Conteúdo visual genérico" class="w-full h-full object-cover">
+                            </div>
+                            
+                            <!-- IMAGEM "DEPOIS" - Substitua o src pela URL da sua segunda imagem -->
+                            <div class="w-1/2 h-96 image-container">
+                                <!-- SUBSTITUA O SRC PELA URL DA SUA IMAGEM "DEPOIS" -->
+                                <img src="https://i.ibb.co/WNVT8Dv9/cyi2b3dmgant1h8sa8ev-9.png" alt="Conteúdo visual com IA" class="w-full h-full object-cover">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Point Section -->
+    <section class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto text-center max-w-4xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">Cansado de Fotos Genéricas e Vídeos Caros que Não Geram Resultado?</h2>
+            <p class="text-xl text-gray-300 leading-relaxed">
+                No mundo digital de hoje, um conteúdo visual mediano é o mesmo que estar invisível. Sabemos o desafio: sessões de fotos demoradas, produções de vídeo complexas e custos que pesam no orçamento, muitas vezes entregando um resultado que não reflete a verdadeira essência da sua marca.
+            </p>
+        </div>
+    </section>
+
+    <!-- Solution & Services Section -->
+    <section id="solucoes" class="py-20 px-4 bg-black">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">
+                A Solução: <span class="gradient-text">Ensaios Fotográficos e Vídeos de Divulgação</span> Criados com Inteligência Artificial
+            </h2>
+            
+            <div class="grid md:grid-cols-2 gap-10">
+                <!-- Photos Block -->
+                <div class="feature-card bg-gray-900 bg-opacity-50 rounded-2xl p-8 flex flex-col h-full">
+                    <div class="text-5xl mb-6">📸</div>
+                    <h3 class="text-2xl font-bold mb-4">Ensaios Fotográficos Gerados por IA</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Imagine fotos profissionais, impactantes e 100% personalizadas, criadas do zero. Seja para produtos, conceitos abstratos ou retratos de equipe, a IA permite uma liberdade criativa sem precedentes. Entregamos imagens únicas que capturam a atenção e contam sua história.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Ensaios para Produtos</h4>
+                            <p class="text-gray-300">Destaque seus produtos com imagens de alta qualidade em ambientes personalizados, ângulos perfeitos e iluminação profissional - tudo criado digitalmente.</p>
+                        </div>
+                        
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Retratos Corporativos</h4>
+                            <p class="text-gray-300">Crie uma identidade visual consistente para toda sua equipe com retratos profissionais padronizados, sem a necessidade de reunir todos para uma sessão de fotos.</p>
+                        </div>
+                        
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Cenários Conceituais</h4>
+                            <p class="text-gray-300">Visualize ideias abstratas e conceitos complexos através de imagens impactantes que comunicam sua mensagem de forma clara e memorável.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="https://wa.me/5585987133017?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20ensaios%20fotográficos%20com%20IA." target="_blank" class="whatsapp-button inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Videos Block -->
+                <div class="feature-card bg-gray-900 bg-opacity-50 rounded-2xl p-8 flex flex-col h-full">
+                    <div class="text-5xl mb-6">🎬</div>
+                    <h3 class="text-2xl font-bold mb-4">Criação de Vídeos de Divulgação para Negócios</h3>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Do roteiro à edição final, a IA acelera e refina cada etapa. Desenvolvemos vídeos de alta qualidade para redes sociais, anúncios ou seu site, com personagens e narrativas criadas para engajar seu público e impulsionar suas vendas.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Vídeos Explicativos</h4>
+                            <p class="text-gray-300">Transforme conceitos complexos em explicações claras e envolventes com animações personalizadas e narrativas cativantes.</p>
+                        </div>
+                        
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Anúncios para Redes Sociais</h4>
+                            <p class="text-gray-300">Crie conteúdo otimizado para cada plataforma, com formatos verticais, horizontais ou quadrados, adaptados às tendências atuais.</p>
+                        </div>
+                        
+                        <div class="service-detail">
+                            <h4 class="font-bold text-lg text-indigo-300">Apresentações de Produtos</h4>
+                            <p class="text-gray-300">Destaque os benefícios e características dos seus produtos com demonstrações visuais impactantes que convertem visualizações em vendas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-auto">
+                        <a href="https://wa.me/5585987133017?text=Olá,%20gostaria%20de%20mais%20informações%20sobre%20criação%20de%20vídeos%20com%20IA." target="_blank" class="whatsapp-button inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Solicitar Orçamento
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-20 px-4 bg-gradient-to-b from-gray-900 to-black">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Benefícios Que Você Vai Amar</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Conteúdo 100% Exclusivo e Original</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Fuja do clichê. Suas imagens e vídeos são únicos, feitos sob medida para sua marca.</p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Qualidade Profissional com Custo Inteligente</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Obtenha resultados visuais de altíssimo nível com um investimento muito mais acessível.</p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Velocidade Incrível na Entrega</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Com a IA, seu conteúdo visual é entregue de forma rápida, permitindo que você lance suas campanhas no timing perfeito.</p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Versatilidade e Flexibilidade Total</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Ajustamos cada detalhe, testamos diferentes estilos e criamos exatamente o que você precisa.</p>
+                </div>
+                
+                <!-- Benefit 5 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Aumento de Autoridade e Conversão</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Visuais impactantes geram confiança, transformam visitantes em clientes e elevam seu posicionamento digital.</p>
+                </div>
+                
+                <!-- Benefit 6 -->
+                <div class="benefit-item bg-gray-900 bg-opacity-40 rounded-xl p-6 border border-gray-800 hover:border-indigo-500 transition">
+                    <div class="flex items-start mb-4">
+                        <span class="text-green-400 text-2xl mr-3">✅</span>
+                        <h3 class="text-xl font-bold">Diferenciação Competitiva</h3>
+                    </div>
+                    <p class="text-gray-300 pl-9">Destaque-se da concorrência com um visual único que reflete a verdadeira essência da sua marca.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="sobre" class="py-20 px-4 bg-gray-900">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center max-w-4xl mx-auto">
+                <div class="md:w-1/3 mb-8 md:mb-0">
+                    <!-- IMAGEM DO ESPECIALISTA - Agora em formato retangular -->
+                    <div class="mx-auto overflow-hidden">
+                        <!-- SUBSTITUA O SRC PELA URL DA SUA IMAGEM DE PERFIL -->
+                        <img src="https://i.ibb.co/SwZPYcpw/stylish-man-wearing-black-suit-and-sunglasses-luxury-wristwatch-standing-confidently-next-to-a-dark.png" alt="Especialista em Conteúdo Visual com IA" class="profile-image-full w-full h-auto object-cover shadow-xl">
+                    </div>
+                </div>
+                <div class="md:w-2/3 md:pl-10">
+                    <h2 class="text-3xl font-bold mb-6">Especialista em Conteúdo Visual com IA</h2>
+                    <p class="text-gray-300 leading-relaxed mb-6">
+                        Como especialista em inteligência artificial aplicada à criação visual, meu compromisso é com a inovação e a excelência. Eu combino a criatividade humana com o poder computacional da IA para entregar não apenas imagens e vídeos, mas soluções visuais estratégicas que impulsionam o seu negócio.
+                    </p>
+                    <p class="text-gray-300 leading-relaxed">
+                        Minha missão é simples: criar o visual que aumenta sua autoridade, converte visitantes em clientes e eleva seu posicionamento digital.
+                    </p>
+                    <div class="mt-8">
+                        <a href="https://wa.me/5585987133017?text=Olá,%20gostaria%20de%20conversar%20com%20um%20especialista%20em%20conteúdo%20visual%20com%20IA." target="_blank" class="whatsapp-button inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium">
+                            <svg class="w-5 h-5 mr-2" fill="currentColor" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                            </svg>
+                            Fale com o Especialista
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA Section -->
+    <section id="contato" class="py-20 px-4 bg-gradient-to-b from-black to-indigo-900">
+        <div class="container mx-auto max-w-4xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto Para Revolucionar Seu Conteúdo Visual?</h2>
+                <p class="text-xl text-gray-300">Não perca mais tempo e dinheiro com soluções ultrapassadas.</p>
+            </div>
+            
+            <div class="bg-gray-900 bg-opacity-70 rounded-2xl p-8 shadow-2xl border border-gray-800">
+                <h3 class="text-2xl font-bold mb-6 text-center">Solicite um Orçamento Personalizado</h3>
+                
+                <form id="contactForm" class="space-y-6">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-1">Nome</label>
+                            <input type="text" id="name" name="name" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Seu nome completo" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-1">Email</label>
+                            <input type="email" id="email" name="email" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="seu@email.com" required>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label for="company" class="block text-sm font-medium text-gray-300 mb-1">Empresa</label>
+                        <input type="text" id="company" name="company" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Nome da sua empresa">
+                    </div>
+                    
+                    <div>
+                        <label for="service" class="block text-sm font-medium text-gray-300 mb-1">Serviço de Interesse</label>
+                        <select id="service" name="service" class="form-input w-full px-4 py-3 rounded-lg text-white bg-transparent">
+                            <option value="" class="bg-gray-800">Selecione uma opção</option>
+                            <option value="photos" class="bg-gray-800">Ensaios Fotográficos com IA</option>
+                            <option value="videos" class="bg-gray-800">Vídeos de Divulgação</option>
+                            <option value="both" class="bg-gray-800">Ambos os Serviços</option>
+                            <option value="other" class="bg-gray-800">Outro / Não tenho certeza</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-gray-300 mb-1">Detalhes do Projeto</label>
+                        <textarea id="message" name="message" rows="4" class="form-input w-full px-4 py-3 rounded-lg text-white" placeholder="Conte-nos um pouco sobre o seu projeto e necessidades..."></textarea>
+                    </div>
+                    
+                    <div class="text-center">
+                        <a href="https://wa.me/5500000000000?text=Olá,%20gostaria%20de%20solicitar%20um%20orçamento%20para%20conteúdo%20visual%20com%20IA." target="_blank" class="cta-button inline-block px-8 py-4 text-lg font-bold text-white rounded-full shadow-lg">
+                            SOLICITAR ORÇAMENTO AGORA
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-4 bg-black border-t border-gray-800">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <span class="text-2xl font-bold gradient-text">NydeIA</span>
+                    <p class="text-gray-400 mt-2">Transformando negócios com conteúdo visual de IA</p>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 NydeIA. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const company = document.getElementById('company').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Redirect to WhatsApp with form information
+            const whatsappText = `Olá, sou ${name} da empresa ${company}. Gostaria de mais informações sobre ${service}. Detalhes adicionais: ${message}. Meu email para contato é: ${email}`;
+            const whatsappURL = `https://wa.me/5585987133017?text=${encodeURIComponent(whatsappText)}`;
+            
+            window.open(whatsappURL, '_blank');
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9624458db557a51f',t:'MTc1MzAzMzUyMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
